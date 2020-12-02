@@ -1,3 +1,3 @@
 fn main() {
-    println!("Hello, world!");
+    println!("Run with --bin 01");
 }
