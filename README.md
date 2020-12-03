@@ -20,4 +20,9 @@
 ************************************************************
 ```
 
-Run like this: `cargo run --bin 01`
+Run like this:
+
+```
+cargo install cargo-aoc
+cargo run --release
+```

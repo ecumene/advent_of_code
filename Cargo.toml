@@ -4,12 +4,9 @@ version = "0.1.0"
 authors = ["Mitchell Hynes <me@mitchellhynes.com>"]
 edition = "2018"
 
-[[bin]]
-name = "01"
-path = "src/01/main.rs"
-
-[[bin]]
-name = "01_eb"
-path = "src/01_eb/main.rs"
-
 [dependencies]
+aoc-runner = "0.3"
+aoc-runner-derive = "0.3"
+itertools = "0.9"
+serde_scan = "0.4"
+

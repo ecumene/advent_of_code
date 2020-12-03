@@ -10,14 +10,11 @@ fn main() {
                 .expect("That's not a number!")
         })
         .collect();
-    let mut closestSum = u32::MAX;
-    inputs.sort();
-    let triplet = inputs.iter().peekable().find_map(|&x| {
-        let split = inputs.split(|&left| left == x).next();
-        if let Some(split_values) = split {
-            
-        } 
-        None
-    })
+
+    inputs.iter().copied().combinations(3).for_each(|c| {
+        if c.iter().sum::<i32>() == 2020 {
+            result = c.iter().product()
+        }
+    });
     println!("{}", number_a * );
 }
