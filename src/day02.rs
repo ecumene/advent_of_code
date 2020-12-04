@@ -62,7 +62,7 @@ mod tests {
     fn solve() {
         let input = include_str!("../input/2020/day2.txt");
 
-        assert_eq!(solve_part1(input), 636);
-        assert_eq!(solve_part2(input), 588);
+        assert_eq!(solve_part1(input), 393);
+        assert_eq!(solve_part2(input), 690);
     }
 }

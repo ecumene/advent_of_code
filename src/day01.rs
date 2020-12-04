@@ -37,7 +37,7 @@ mod tests {
         let input = include_str!("../input/2020/day1.txt");
         let input = parse_input(input);
 
-        assert_eq!(solve_part1(&input), 381699);
-        assert_eq!(solve_part2(&input), 111605670);
+        assert_eq!(solve_part1(&input), 1010884);
+        assert_eq!(solve_part2(&input), 253928438);
     }
 }
