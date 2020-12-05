@@ -66,6 +66,7 @@ BBFFBBFRLL";
     fn solve() {
         let input = include_str!("../input/2020/day5.txt");
         let input = parse_inputs(input);
+        assert_eq!(solve_part1(&input), 826);
         assert_eq!(solve_part2(&input), 678);
     }
 }
