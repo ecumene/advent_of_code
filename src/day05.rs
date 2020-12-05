@@ -56,8 +56,10 @@ mod tests {
 BFFFBBFRRR
 FFFBBBFRRR
 BBFFBBFRLL";
+        let input = parse_inputs(input);
 
-        assert_eq!(solve_part1(&parse_inputs(input)), 820);
+        assert_eq!(solve_part1(&input), 820);
+        assert_eq!(solve_part2(&input), 120);
     }
 
     #[test]
