@@ -1,5 +1,6 @@
 use aoc_runner_derive::aoc;
 use itertools::Itertools;
+use std::collections::HashMap;
 
 #[aoc(day6, part1)]
 fn solve_part1(input: &str) -> usize {
@@ -20,15 +21,17 @@ fn solve_part2(input: &str) -> usize {
     input
         .split("\n\n")
         .map(|group| {
-            let mut all_answers = group.lines();
-            let mut common = all_answers.next().unwrap().chars().collect::<Vec<_>>();
-
-            for answers in all_answers {
-                // remove all answers that are not shared
-                common.retain(|&c| answers.contains(c));
-            }
-
-            common.len()
+            let people = group.lines().count();
+            group
+                .chars()
+                .filter(|c| c.is_ascii_alphabetic())
+                .fold(HashMap::new(), |mut acc, c| {
+                    *acc.entry(c).or_insert(0) += 1;
+                    acc
+                })
+                .iter()
+                .filter(|&(_, &v)| v == people)
+                .count()
         })
         .sum()
 }

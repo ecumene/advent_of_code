@@ -11,7 +11,7 @@ fn parse_input(input: &str) -> Vec<Vec<bool>> {
 }
 
 #[aoc(day3, part1)]
-fn solve_part1(input: &Vec<Vec<bool>>) -> usize {
+fn solve_part1(input: &[Vec<bool>]) -> usize {
     input
         .iter()
         .enumerate()
@@ -19,7 +19,7 @@ fn solve_part1(input: &Vec<Vec<bool>>) -> usize {
         .sum()
 }
 
-fn traverse(input: &Vec<Vec<bool>>, right: &usize, down: &usize) -> usize {
+fn traverse(input: &[Vec<bool>], right: usize, down: usize) -> usize {
     input
         .iter()
         .enumerate()
@@ -28,10 +28,10 @@ fn traverse(input: &Vec<Vec<bool>>, right: &usize, down: &usize) -> usize {
 }
 
 #[aoc(day3, part2)]
-fn solve_part2(input: &Vec<Vec<bool>>) -> usize {
+fn solve_part2(input: &[Vec<bool>]) -> usize {
     TRAVERSAL_PATHS
         .iter()
-        .map(|(right, down)| traverse(input, right, down))
+        .map(|(right, down)| traverse(input, *right, *down))
         .product()
 }
 
