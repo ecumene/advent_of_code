@@ -162,6 +162,6 @@ mem[26] = 1
         let input = parse_input(input);
 
         assert_eq!(solve_part1(&input), 8570568288597);
-        assert_eq!(solve_part2(&input), 8570568288597);
+        assert_eq!(solve_part2(&input), 3289441921203);
     }
 }
