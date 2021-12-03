@@ -6,30 +6,18 @@ fn parse_input(input: &str) -> Vec<u32> {
     input.lines().map(|line| line.parse().unwrap()).collect()
 }
 
+fn solve<const N: usize>(inputs: &[u32]) -> usize {
+    inputs.windows(N).filter(|w| w[0] < w[N - 1]).count()
+}
+
 #[aoc(day1, part1)]
-fn solve_part1(input: &[u32]) -> u32 {
-    let mut acc = 0;
-    for (a, b) in input.iter().tuple_windows() {
-        if a < b {
-            acc += 1;
-        }
-    }
-    acc
+fn solve_part1(input: &[u32]) -> usize {
+    solve::<2>(input)
 }
 
 #[aoc(day1, part2)]
-fn solve_part2(input: &[u32]) -> u32 {
-    let mut acc = 0;
-    let mut iter = input.iter().tuple_windows::<(_, _, _)>().peekable();
-    while let Some((a, b, c)) = iter.next() {
-        let next = iter.peek();
-        if let Some((i, j, k)) = next {
-            if a + b + c < *i + *j + *k {
-                acc += 1
-            }
-        }
-    }
-    acc
+fn solve_part2(input: &[u32]) -> usize {
+    solve::<4>(input)
 }
 
 #[cfg(test)]
