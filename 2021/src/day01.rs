@@ -1,5 +1,4 @@
 use aoc_runner_derive::{aoc, aoc_generator};
-use itertools::Itertools;
 
 #[aoc_generator(day1)]
 fn parse_input(input: &str) -> Vec<u32> {
