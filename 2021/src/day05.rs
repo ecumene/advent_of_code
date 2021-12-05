@@ -49,17 +49,17 @@ pub fn solve_part2(inputs: &[Line]) -> usize {
         let mut v1 = 0; 
         let mut v2 = 0;
 
-        match x1.cmp(&x2) {
-            Ordering::Less => v1 = 1,
-            Ordering::Greater => v1 = -1,
-            Ordering::Equal => {},
-        }
+        v1 = match x1.cmp(&x2) {
+            Ordering::Less => 1,
+            Ordering::Greater => -1,
+            Ordering::Equal => 0,
+        };
 
-        match y1.cmp(&y2) {
-            Ordering::Less => v2 = 1,
-            Ordering::Greater => v2 = -1,
-            Ordering::Equal => {},
-        }
+        v2 = match y1.cmp(&y2) {
+            Ordering::Less => 1,
+            Ordering::Greater => -1,
+            Ordering::Equal => 0,
+        };
 
         while (&x1, &y1) != (&x2, &y2) {
             increase_point(&mut points, *x1, *y1);
