@@ -41,7 +41,7 @@ pub fn solve_part1(inputs: &[Line]) -> usize {
 
 #[aoc(day5, part2)]
 pub fn solve_part2(inputs: &[Line]) -> usize {
-    let mut count = 0;
+    let count = 0;
     let mut inputs = inputs.to_vec();
     let mut points = HashMap::new();
 
