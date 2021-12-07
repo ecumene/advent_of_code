@@ -18,7 +18,6 @@ fn increase_point(hashmap: &mut HashMap<(i32, i32), i32>, x: i32, y: i32) {
 
 #[aoc(day5, part1)]
 pub fn solve_part1(inputs: &[Line]) -> usize {
-    let mut count = 0;
     let mut points = HashMap::new();
 
     for (x1, y1, x2, y2) in inputs {
@@ -41,21 +40,17 @@ pub fn solve_part1(inputs: &[Line]) -> usize {
 
 #[aoc(day5, part2)]
 pub fn solve_part2(inputs: &[Line]) -> usize {
-    let count = 0;
     let mut inputs = inputs.to_vec();
     let mut points = HashMap::new();
 
     for (x1, y1, x2, y2) in inputs.iter_mut() {
-        let mut v1 = 0; 
-        let mut v2 = 0;
-
-        v1 = match x1.cmp(&x2) {
+        let v1 = match x1.cmp(&x2) {
             Ordering::Less => 1,
             Ordering::Greater => -1,
             Ordering::Equal => 0,
         };
 
-        v2 = match y1.cmp(&y2) {
+        let v2 = match y1.cmp(&y2) {
             Ordering::Less => 1,
             Ordering::Greater => -1,
             Ordering::Equal => 0,

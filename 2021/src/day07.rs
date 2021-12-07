@@ -10,7 +10,6 @@ pub fn parse_input(input: &str) -> Vec<usize> {
 
 #[aoc(day7, part1)]
 pub fn solve_part1(inputs: &[usize]) -> usize {
-    let max_value = inputs.iter().max().unwrap();
     let mut lowest_fuel = usize::MAX;
     for position_1 in inputs {
         let mut movement = 0;
