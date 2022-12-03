@@ -1,0 +1,20 @@
+[tool.poetry]
+authors = ["Mitchell Hynes <ecumene@users.noreply.github.com>"]
+description = ""
+name = "aoc"
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+black = "^22.10.0"
+jupyter = "^1.0.0"
+jupyter-black = "^0.3.3"
+jupyterlab = "^3.5.0"
+lxml = "^4.9.1"
+parsel = "^1.7.0"
+python = "^3.10"
+python-dotenv = "^0.21.0"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
