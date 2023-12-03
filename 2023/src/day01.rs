@@ -64,7 +64,7 @@ zoneight234
 
     #[test]
     fn solve() {
-        let input = include_str!("../input/2021/day1.txt");
+        let input = include_str!("../input/2023/day1.txt");
 
         assert_eq!(solve_part1(&input), 54951);
         assert_eq!(solve_part2(&input), 55218);
