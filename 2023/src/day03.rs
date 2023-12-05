@@ -223,6 +223,6 @@ $..
         let input = include_str!("../input/2023/day3.txt");
 
         assert_eq!(solve_part1(&input), 530495);
-        assert_eq!(solve_part2(&input), 55218);
+        assert_eq!(solve_part2(&input), 80253814);
     }
 }
