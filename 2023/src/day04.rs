@@ -1,7 +1,6 @@
 use aoc_runner_derive::{aoc, aoc_generator};
 
 struct Card {
-    number: usize,
     winning_numbers: Vec<usize>,
     scratch_numbers: Vec<usize>,
 }
@@ -28,7 +27,6 @@ fn parse_input(input: &str) -> Vec<Card> {
                 .collect();
             println!("{:?} {:?} {}", winning_numbers, scratch_numbers, number);
             Card {
-                number: number.parse().unwrap(),
                 winning_numbers,
                 scratch_numbers,
             }
@@ -59,15 +57,6 @@ fn solve_part1(input: &[Card]) -> usize {
 
 #[aoc(day4, part2)]
 fn solve_part2(input: &[Card]) -> usize {
-    let mut scratch_card_count = 0;
-    // for card in input {
-    //     let matching_winning_numbers = card
-    //         .scratch_numbers
-    //         .iter()
-    //         .filter(|&n| card.winning_numbers.contains(n))
-    //         .count();
-    // }
-
     let mut tuples: Vec<(_, _)> = input
         .iter()
         .map(|card| {
